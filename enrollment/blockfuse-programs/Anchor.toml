@@ -1,0 +1,22 @@
+[toolchain]
+package_manager = "yarn"
+
+[features]
+seeds = false
+skip-lint = false
+
+[programs.devnet]
+blockfuse_enrollment = "5v3j8M2TNpbqJzxuP3K7sGdh848rqVLwhR6iK7iLAf7V"
+
+[programs.localnet]
+blockfuse_enrollment = "5v3j8M2TNpbqJzxuP3K7sGdh848rqVLwhR6iK7iLAf7V"
+
+[registry]
+url = "https://api.apr.dev"
+
+[provider]
+cluster = "Devnet"
+wallet = "~/.config/solana/id.json"
+
+[scripts]
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 \"tests/**/*.ts\""

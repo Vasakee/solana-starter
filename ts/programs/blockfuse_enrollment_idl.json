@@ -1,0 +1,86 @@
+{
+  "version": "0.1.0",
+  "name": "blockfuse_enrollment",
+  "instructions": [
+    {
+      "name": "complete",
+      "accounts": [
+        {
+          "name": "signer",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "enrollment",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "github",
+          "type": "bytes"
+        }
+      ]
+    },
+    {
+      "name": "update",
+      "accounts": [
+        {
+          "name": "signer",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "enrollment",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "github",
+          "type": "bytes"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "EnrollmentAccount",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "github",
+            "type": "bytes"
+          },
+          {
+            "name": "key",
+            "type": "publicKey"
+          }
+        ]
+      }
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "Unauthorized",
+      "msg": "Unauthorized: Only the original enrollee can update their account"
+    }
+  ],
+  "metadata": {
+    "address": "5v3j8M2TNpbqJzxuP3K7sGdh848rqVLwhR6iK7iLAf7V"
+  }
+}
