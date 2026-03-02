@@ -12,7 +12,7 @@ const secretArray = Array.from(kp.secretKey);
 const walletObj = { wallet: kp.publicKey.toBase58(), secretKey: secretArray };
 
 // Save to ts/bfl-wallet.json (one level up from this folder)
-const outPath = path.resolve(__dirname, "..", "bfl-wallet.json");
+const outPath = path.resolve(__dirname, "..", "dev-wallet.json");
 fs.writeFileSync(outPath, JSON.stringify(walletObj, null, 2), { encoding: "utf8", flag: "w" });
 
 console.log(`Created new Solana wallet: ${kp.publicKey.toBase58()}`);
