@@ -2,9 +2,9 @@ import { Transaction, SystemProgram, Connection, Keypair, LAMPORTS_PER_SOL, send
 import wallet from "../dev-wallet.json"
 
 // Import our dev wallet keypair from the wallet file
-const from = Keypair.fromSecretKey(new Uint8Array(wallet));
+const from = Keypair.fromSecretKey(new Uint8Array(wallet.secretKey));
 // Define our WBA public key
-const to = new PublicKey("GLtaTaYiTQrgz411iPJD79rsoee59HhEy18rtRdrhEUJ");
+const to = new PublicKey("2WSRXtziAztT2gtJULozzKrNLMDNvo4fW28AX45SCCCn");
 
 //Create a Solana devnet connection
 const connection = new Connection("https://api.devnet.solana.com", "confirmed");
